@@ -8,6 +8,8 @@ package(
     default_visibility = ["//visibility:public"],
 )
 
+exports_files(["requirements.txt"])
+
 # Declare flags that can be set on the build/test command line,
 # e.g. bazel build :all --//:with-homa=true --//:with-homa-grpc=true
 bool_flag(

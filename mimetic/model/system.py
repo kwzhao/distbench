@@ -9,6 +9,15 @@ arrival models. Models can be constructed directly from `dataset.Trace`s:
   ```
 """
 
+from __future__ import annotations
+
+import attrs
+import tqdm
+from typing import TypeVar, Generic, Type, Mapping, Any
+
+from mimetic import dataset
+from mimetic.model import method, arrival, event
+
 T = TypeVar('T', bound=method.Model)
 
 

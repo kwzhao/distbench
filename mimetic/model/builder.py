@@ -20,6 +20,14 @@ In most cases, users will interface with the `Tree` builder:
   ```
 """
 
+from __future__ import annotations
+
+import attrs
+import collections
+
+from mimetic import utils
+from mimetic.model import event, decision
+
 @attrs.define
 class Sentinel:
   """A sentinel for conveniently implementing trees."""

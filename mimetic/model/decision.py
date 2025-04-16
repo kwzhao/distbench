@@ -24,6 +24,17 @@ Example usage:
   ```
 """
 
+from __future__ import annotations
+
+import attrs
+import collections
+import copy
+import random
+from typing import Iterable
+
+from mimetic import utils
+from mimetic.model import event
+
 @attrs.frozen
 class Sentinel:
   """A sentinel model, for conveniently implementing trees."""
@@ -225,7 +236,8 @@ class TreeNode:
     if not self.children:
       return copy.deepcopy(self)
     # Filter for children that occur more frequently than `alpha`.
-    is_large_enough = lambda w: w >= alpha
+    def is_large_enough(w):
+      return w >= alpha
     weights, children = zip(*[
         (w, c.prune(alpha))
         for w, c in self.weights_and_children()

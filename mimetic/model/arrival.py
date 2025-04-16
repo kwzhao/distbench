@@ -3,6 +3,12 @@
 This module defines how to model and synthesize sequences of root requests.
 """
 
+from __future__ import annotations
+
+import attrs
+
+from mimetic import dataset, utils
+
 @attrs.frozen
 class NormEcdf:
   """A normalized inter-arrival time distribution."""

@@ -9,6 +9,13 @@ Each event has an associated key, which allows similar events (events with the
 same key) to be grouped together for aggregate downstream modeling.
 """
 
+from __future__ import annotations
+
+import attrs
+from typing import Iterable, Optional, Sequence
+
+from mimetic import dataset
+
 @attrs.frozen
 class StartKey:
   """The key for `Start` events."""

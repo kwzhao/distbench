@@ -12,6 +12,20 @@ dependencies:
   ```
 """
 
+from __future__ import annotations
+
+import attrs
+import collections
+from typing import Iterable, Mapping, Optional
+
+from mimetic import system, method, utils
+from mimetic.model import decision
+
+# Assuming these are proto imports that would be available in the environment
+# If these don't exist, they would need to be added to the project
+import traffic_config_pb2
+import joint_distribution_pb2
+
 _DUMMY_PAYLOAD_NAME = 'dummy_payload'
 _ROOT_REQUEST_PAYLOAD_NAME = 'root_request_payload'
 _ROOT_REQUEST_PAYLOAD_SIZE = 1024
