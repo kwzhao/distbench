@@ -1,5 +1,0 @@
-attrs
-numpy
-pandas
-networkx
-tqdm
